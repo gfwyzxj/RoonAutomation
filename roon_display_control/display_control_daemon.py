@@ -79,18 +79,32 @@ def toggle_display(roonapi: RoonApi, target_display_name: str):
                 os.system('xset dpms force on')
 
 
-def main():
+def run_daemon():
     """
-    Run the main functionality.
+    Run the main functionality as a daemon process.
     """
     core_id, token = read_files("my_core_id_file", "my_token_file")
     server = discover_roon(core_id)
     roonapi = connect_roon(appinfo, token, server)
 
     while True:
-        toggle_display(roonapi, 'hqplayer')
-        time.sleep(2)
+        toggle_display(roonapi, ZONE_NAME)
+        time.sleep(CHECK_INTERVAL)
+
+
+def daemonize():
+    """
+    Fork the current process and run the main functionality as a daemon.
+    """
+    pid = os.fork()
+
+    if pid > 0:
+        sys.exit()
+
+    if pid == 0:
+        os.setsid()
+        run_daemon()
 
 
 if __name__ == "__main__":
-    main()
+    daemonize()

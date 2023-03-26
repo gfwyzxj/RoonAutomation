@@ -38,6 +38,8 @@ CHECK_INTERVAL = 1
 ```
 
 ## Systemd service (Optional)
+Use the non-daemonized script if you plan to use systemd to run the script. Otherwise double-fock will occur.
+
 To automatically run the script at startup on a Debian-based system, follow these steps:
 
 Create a systemd service file:
