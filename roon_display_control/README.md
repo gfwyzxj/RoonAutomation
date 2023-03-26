@@ -23,14 +23,14 @@ Run the script using the following command:
 python3 display_control.py
 ```
 
-The script will run as a daemon process and check the playback status of the specified Roon zone every 2 seconds. If the status is not 'playing', the display will be turned off. Otherwise, the display will be turned on.
+The script will run as a daemon process and check the playback status of the specified Roon zone every second. If the status is not 'playing', the display will be turned off. Otherwise, the display will be turned on.
 
 ## Customization
-To change the target display name, edit the following line in the display_control.py file:
+To change the target zone name, edit the following line in the display_control.py file:
 ```
 ZONE_NAME = 'hqplayer'
 ```
-Replace 'hqplayer' with the desired display name.
+Replace 'hqplayer' with the desired zone name.
 
 To change the desired check intervals to Roon Server, change this line:
 ```
