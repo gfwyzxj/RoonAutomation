@@ -80,3 +80,20 @@ sudo systemctl status roon_screen_control.service
 ```
 
 Now, the script will run as the admin user on system boot.
+
+## Enhanced version to handle Roon reboots (display_control_enhanced.py)
+This enhanced version of the script handles Roon server reboots, reloads Xorg and Chromium, and retries the connection to the Roon server.
+
+## Features
+
+- Checks if the Roon server is reachable.
+- Handles Roon server reboots.
+- Reloads Xorg and Chromium when needed.
+- Retries the connection to the Roon server.
+
+## Configuration
+
+- `CHECK_INTERVAL`: The time interval (in seconds) to wait between checking the Roon zone's status. (Default: 1 second)
+- `ZONE_NAME`: The name of the Roon zone to monitor. (Default: 'hqplayer')
+- `HOST`: The hostname or IP address of the Roon server to check for reachability.
+- `WAIT_TIME`: The time interval (in seconds) to wait before retrying the connection to the Roon server. (Default: 30 seconds)
