@@ -88,8 +88,8 @@ def main():
     roonapi = connect_roon(appinfo, token, server)
 
     while True:
-        toggle_display(roonapi, 'hqplayer')
-        time.sleep(2)
+        toggle_display(roonapi, ZONE_NAME)
+        time.sleep(CHECK_INTERVAL)
 
 
 if __name__ == "__main__":
