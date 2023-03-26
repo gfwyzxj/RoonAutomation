@@ -8,6 +8,7 @@ The script is tested on Raspberry Pi 4 connecting with an external HDMI display 
 
 - Python 3.6 or higher
 - Roon API: Install it using `pip install roonapi`
+- You have setup your device as a web kiosk pointing to Roon display URL with browser such as Chromium.
 
 ## Setup
 
